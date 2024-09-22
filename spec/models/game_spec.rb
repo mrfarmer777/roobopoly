@@ -1,8 +1,9 @@
 require 'rails_helper'
 
 describe Game, type: :model do
-  it 'is a thing' do
-    expect(Game.new).to be_a(Game)
+  describe 'associations' do
+    it { should have_many(:player_games) }
+    it { should have_many(:players).through(:player_games) }
   end
 
   it 'initializes with a turn of 1' do
