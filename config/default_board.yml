@@ -1,0 +1,11 @@
+shared:
+  spaces:
+    - name: "Go"
+      description: "This is the first space"
+      color: "#FF0000"
+    - name: "Free Parking"
+      description: "This is the second space"
+      color: "#00FF00"
+    - name: "Boardwalk"
+      description: "This is the third space"
+      color: "#0000FF"

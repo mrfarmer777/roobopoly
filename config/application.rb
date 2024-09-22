@@ -23,5 +23,6 @@ module Roobopoly
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.x.default_board = config_for(:default_board)
   end
 end

@@ -3,6 +3,7 @@ class CreateSpaces < ActiveRecord::Migration[7.1]
     create_table :spaces do |t|
       t.bigint :game_id
       t.integer :position
+      t.string :name
 
       t.timestamps
     end
