@@ -1,11 +1,122 @@
 shared:
   spaces:
     - name: "Go"
-      description: "This is the first space"
-      color: "#FF0000"
+      color: "#FFFFFF"
+      purchase_price: null
+    - name: "Mediterranean Avenue"
+      color: "#8B4513"
+      purchase_price: 60
+    - name: "Community Chest"
+      color: "#FFFFFF"
+      purchase_price: null
+    - name: "Baltic Avenue"
+      color: "#8B4513"
+      purchase_price: 60
+    - name: "Income Tax"
+      color: "#FFFFFF"
+      purchase_price: null
+    - name: "Reading Railroad"
+      color: "#000000"
+      purchase_price: 200
+    - name: "Oriental Avenue"
+      color: "#ADD8E6"
+      purchase_price: 100
+    - name: "Chance"
+      color: "#FFFFFF"
+      purchase_price: null
+    - name: "Vermont Avenue"
+      color: "#ADD8E6"
+      purchase_price: 100
+    - name: "Connecticut Avenue"
+      color: "#ADD8E6"
+      purchase_price: 120
+    - name: "Jail"
+      color: "#FFFFFF"
+      purchase_price: null
+    - name: "St. Charles Place"
+      color: "#FF00FF"
+      purchase_price: 140
+    - name: "Electric Company"
+      color: "#FFFFFF"
+      purchase_price: 150
+    - name: "States Avenue"
+      color: "#FF00FF"
+      purchase_price: 140
+    - name: "Virginia Avenue"
+      color: "#FF00FF"
+      purchase_price: 160
+    - name: "Pennsylvania Railroad"
+      color: "#000000"
+      purchase_price: 200
+    - name: "St. James Place"
+      color: "#FFA500"
+      purchase_price: 180
+    - name: "Community Chest"
+      color: "#FFFFFF"
+      purchase_price: null
+    - name: "Tennessee Avenue"
+      color: "#FFA500"
+      purchase_price: 180
+    - name: "New York Avenue"
+      color: "#FFA500"
+      purchase_price: 200
     - name: "Free Parking"
-      description: "This is the second space"
-      color: "#00FF00"
-    - name: "Boardwalk"
-      description: "This is the third space"
+      color: "#FFFFFF"
+      purchase_price: null
+    - name: "Kentucky Avenue"
+      color: "#FF0000"
+      purchase_price: 220
+    - name: "Chance"
+      color: "#FFFFFF"
+      purchase_price: null
+    - name: "Indiana Avenue"
+      color: "#FF0000"
+      purchase_price: 220
+    - name: "Illinois Avenue"
+      color: "#FF0000"
+      purchase_price: 240
+    - name: "B&O Railroad"
+      color: "#000000"
+      purchase_price: 200
+    - name: "Atlantic Avenue"
+      color: "#FFFF00"
+      purchase_price: 260
+    - name: "Ventnor Avenue"
+      color: "#FFFF00"
+      purchase_price: 260
+    - name: "Water Works"
+      color: "#FFFFFF"
+      purchase_price: 150
+    - name: "Marvin Gardens"
+      color: "#FFFF00"
+      purchase_price: 280
+    - name: "Go to Jail"
+      color: "#FFFFFF"
+      purchase_price: null
+    - name: "Pacific Avenue"
+      color: "#008000"
+      purchase_price: 300
+    - name: "North Carolina Avenue"
+      color: "#008000"
+      purchase_price: 300
+    - name: "Community Chest"
+      color: "#FFFFFF"
+      purchase_price: null
+    - name: "Pennsylvania Avenue"
+      color: "#008000"
+      purchase_price: 320
+    - name: "Short Line"
+      color: "#000000"
+      purchase_price: 200
+    - name: "Chance"
+      color: "#FFFFFF"
+      purchase_price: null
+    - name: "Park Place"
       color: "#0000FF"
+      purchase_price: 350
+    - name: "Luxury Tax"
+      color: "#FFFFFF"
+      purchase_price: null
+    - name: "Boardwalk"
+      color: "#0000FF"
+      purchase_price: 400

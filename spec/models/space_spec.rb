@@ -6,6 +6,6 @@ RSpec.describe Space, type: :model do
   end
 
   describe 'validations' do
-    it { should validate_numericality_of(:position).is_in(0..36).only_integer }
+    it { should validate_numericality_of(:position).is_in(0..40).only_integer }
   end
 end

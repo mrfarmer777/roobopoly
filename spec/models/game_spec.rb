@@ -32,17 +32,18 @@ describe Game, type: :model do
 
   describe '#initialize_spaces' do
     let(:game) { Game.create }
-    it 'creates 3 spaces' do
+    it 'creates 40 spaces' do
       game.initialize_spaces
-      expect(game.spaces.count).to eq(3)
+      expect(game.spaces.count).to eq(40)
     end
 
     it 'creates spaces with names loaded from default board' do
       game.initialize_spaces
       game.reload
-      expect(game.spaces.first.name).to eq("Go")
-      expect(game.spaces.second.name).to eq("Free Parking")
-      expect(game.spaces.last.name).to eq("Boardwalk")
+      ordered_spaces = game.spaces.order(:position)
+      expect(ordered_spaces.first.name).to eq("Go")
+      expect(ordered_spaces.second.name).to eq("Mediterranean Avenue")
+      expect(ordered_spaces.last.name).to eq("Boardwalk")
     end
 
   end
