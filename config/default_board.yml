@@ -1,122 +1,166 @@
 shared:
   spaces:
-    - name: "Go"
-      color: "#FFFFFF"
-      purchase_price: null
     - name: "Mediterranean Avenue"
       color: "#8B4513"
       purchase_price: 60
-    - name: "Community Chest"
-      color: "#FFFFFF"
-      purchase_price: null
+      position: 2
+      rent: 2
     - name: "Baltic Avenue"
       color: "#8B4513"
       purchase_price: 60
-    - name: "Income Tax"
-      color: "#FFFFFF"
-      purchase_price: null
+      position: 4
+      rent: 4
     - name: "Reading Railroad"
       color: "#000000"
       purchase_price: 200
+      position: 6
+      rent: 25
     - name: "Oriental Avenue"
       color: "#ADD8E6"
       purchase_price: 100
-    - name: "Chance"
-      color: "#FFFFFF"
-      purchase_price: null
+      position: 8
+      rent: 6
     - name: "Vermont Avenue"
       color: "#ADD8E6"
       purchase_price: 100
+      position: 9
+      rent: 6
     - name: "Connecticut Avenue"
       color: "#ADD8E6"
       purchase_price: 120
-    - name: "Jail"
-      color: "#FFFFFF"
-      purchase_price: null
+      position: 10
+      rent: 8
     - name: "St. Charles Place"
       color: "#FF00FF"
       purchase_price: 140
+      position: 12
+      rent: 10
     - name: "Electric Company"
       color: "#FFFFFF"
       purchase_price: 150
+      position: 13
+      rent: "4 times dice roll"
     - name: "States Avenue"
       color: "#FF00FF"
       purchase_price: 140
+      position: 14
+      rent: 10
     - name: "Virginia Avenue"
       color: "#FF00FF"
       purchase_price: 160
+      position: 15
+      rent: 12
     - name: "Pennsylvania Railroad"
       color: "#000000"
       purchase_price: 200
+      position: 16
+      rent: 25
     - name: "St. James Place"
       color: "#FFA500"
       purchase_price: 180
-    - name: "Community Chest"
-      color: "#FFFFFF"
-      purchase_price: null
+      position: 17
+      rent: 14
     - name: "Tennessee Avenue"
       color: "#FFA500"
       purchase_price: 180
+      position: 19
+      rent: 14
     - name: "New York Avenue"
       color: "#FFA500"
       purchase_price: 200
-    - name: "Free Parking"
-      color: "#FFFFFF"
-      purchase_price: null
+      position: 20
+      rent: 16
     - name: "Kentucky Avenue"
       color: "#FF0000"
       purchase_price: 220
-    - name: "Chance"
-      color: "#FFFFFF"
-      purchase_price: null
+      position: 22
+      rent: 18
     - name: "Indiana Avenue"
       color: "#FF0000"
       purchase_price: 220
+      position: 24
+      rent: 18
     - name: "Illinois Avenue"
       color: "#FF0000"
       purchase_price: 240
+      position: 25
+      rent: 20
     - name: "B&O Railroad"
       color: "#000000"
       purchase_price: 200
+      position: 26
+      rent: 25
     - name: "Atlantic Avenue"
       color: "#FFFF00"
       purchase_price: 260
+      position: 27
+      rent: 22
     - name: "Ventnor Avenue"
       color: "#FFFF00"
       purchase_price: 260
+      position: 28
+      rent: 22
     - name: "Water Works"
       color: "#FFFFFF"
       purchase_price: 150
+      position: 29
+      rent: "4 times dice roll"
     - name: "Marvin Gardens"
       color: "#FFFF00"
       purchase_price: 280
-    - name: "Go to Jail"
-      color: "#FFFFFF"
-      purchase_price: null
+      position: 30
+      rent: 24
     - name: "Pacific Avenue"
       color: "#008000"
       purchase_price: 300
+      position: 32
+      rent: 26
     - name: "North Carolina Avenue"
       color: "#008000"
       purchase_price: 300
-    - name: "Community Chest"
-      color: "#FFFFFF"
-      purchase_price: null
+      position: 33
+      rent: 26
     - name: "Pennsylvania Avenue"
       color: "#008000"
       purchase_price: 320
+      position: 35
+      rent: 28
     - name: "Short Line"
       color: "#000000"
       purchase_price: 200
-    - name: "Chance"
-      color: "#FFFFFF"
-      purchase_price: null
+      position: 36
+      rent: 25
     - name: "Park Place"
       color: "#0000FF"
       purchase_price: 350
-    - name: "Luxury Tax"
-      color: "#FFFFFF"
-      purchase_price: null
+      position: 38
+      rent: 35
     - name: "Boardwalk"
       color: "#0000FF"
       purchase_price: 400
+      position: 40
+      rent: 50
+    - name: "Go"
+      position: 1
+    - name: "Community Chest"
+      position: 3
+    - name: "Income Tax"
+      position: 5
+    - name: "Chance"
+      position: 7
+    - name: "Jail"
+      position: 11
+    - name: "Community Chest"
+      position: 18
+    - name: "Free Parking"
+      position: 21
+    - name: "Chance"
+      position: 23
+    - name: "Go to Jail"
+      position: 31
+    - name: "Community Chest"
+      position: 34
+    - name: "Chance"
+      position: 37
+    - name: "Luxury Tax"
+      position: 39

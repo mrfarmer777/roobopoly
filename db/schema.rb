@@ -39,9 +39,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_22_134748) do
   end
 
   create_table "spaces", force: :cascade do |t|
-    t.bigint "game_id"
-    t.integer "position"
-    t.string "name"
+    t.bigint "game_id", null: false
+    t.integer "position", null: false
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

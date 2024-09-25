@@ -45,6 +45,5 @@ describe Game, type: :model do
       expect(ordered_spaces.second.name).to eq("Mediterranean Avenue")
       expect(ordered_spaces.last.name).to eq("Boardwalk")
     end
-
   end
 end
