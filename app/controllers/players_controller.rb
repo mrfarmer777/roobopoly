@@ -1,8 +1,13 @@
 class PlayersController < ApplicationController
   def new
+    @player = Player.new
   end
 
   def create
+    @player = Player.new
+    @player.name = params[:player][:name]
+    @player.save
+    redirect_to @player
   end
 
   def edit
@@ -16,8 +21,12 @@ class PlayersController < ApplicationController
   end
 
   def index
+    @players = Player.all
   end
 
-  def delete
+  def destroy
+    @player = Player.find(params[:id])
+    @player.destroy
+    redirect_to players_path
   end
 end
