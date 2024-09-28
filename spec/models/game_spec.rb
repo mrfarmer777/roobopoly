@@ -18,6 +18,18 @@ describe Game, type: :model do
     end
   end
 
+  describe 'validations' do
+    it { should validate_presence_of(:players) }
+
+    it 'validates that at least two players are present' do
+      game = Game.new
+      game.players.build(name: "Player 1")
+      expect(game.valid?).to be false
+      game.players.build(name: "Player 2")
+      expect(game.valid?).to be true
+    end
+  end
+
   it 'initializes with a turn of 1' do
     expect(Game.new.turn).to eq(1)
   end
