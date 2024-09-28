@@ -1,14 +1,19 @@
 require 'rails_helper'
 
 describe Game, type: :model do
+  let(:player1) { Player.create(name: "Player 1") }
+  let(:player2) { Player.create(name: "Player 2") }
+  let(:game) do
+    Game.create(players: [player1, player2])
+  end
   describe 'associations' do
     it { should have_many(:player_games) }
     it { should have_many(:players).through(:player_games) }
     it { should have_many(:spaces) }
 
     it 'destroys all related spaces when destroyed' do
-      game = Game.create
-      other_game = Game.create
+
+      other_game = Game.create(players: [player1, player2])
       game.spaces.create(position: 1, name: "Go")
       game.spaces.create(position: 2, name: "Free Parking")
       game.spaces.create(position: 3, name: "Boardwalk")
@@ -36,14 +41,12 @@ describe Game, type: :model do
 
   describe '#increment_turn' do
     it 'increments the turn by 1' do
-      game = Game.new
       game.increment_turn
       expect(game.turn).to eq(2)
     end
   end
 
   describe '#initialize_spaces' do
-    let(:game) { Game.create }
     it 'creates 40 spaces' do
       game.initialize_spaces
       expect(game.spaces.count).to eq(40)
