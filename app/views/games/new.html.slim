@@ -1,0 +1,6 @@
+h1 Create a New Game
+= form_for :game, url: games_path do |f|
+  = f.collection_select :players, Player.all, :id, :name, prompt: 'Select player'
+  p vs
+  = f.collection_select :players, Player.all, :id, :name, prompt: 'Select player'
+  = f.submit 'Create Game'
