@@ -1,0 +1,12 @@
+h1 All the players
+table
+  thead
+    tr
+      th Game
+      th Players
+  tbody
+    - @games.each do |game|
+      tr.game
+        td = link_to "Go to game", game_path(game)
+        td
+          = game.players.map(&:name).join(', ')
