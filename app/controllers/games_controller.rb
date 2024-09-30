@@ -10,7 +10,7 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.new
-    @game.players = Player.find(params[:players][:id])
+    @game.players = Player.find(params[:game][:player_ids].compact_blank)
     @game.save
     redirect_to @game
   end

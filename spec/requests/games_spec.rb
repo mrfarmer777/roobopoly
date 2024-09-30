@@ -6,7 +6,7 @@ RSpec.describe "Games", type: :request do
     let(:player2) { Player.create(name: 'bar') }
 
     it 'creates a game' do
-      post '/games', params: { players: { id: [player1.id, player2.id] } }
+      post '/games', params: { game: { player_ids: [player1.id, player2.id] } }
 
       created_game = Game.last
       expect(created_game.players).to include(player1)
