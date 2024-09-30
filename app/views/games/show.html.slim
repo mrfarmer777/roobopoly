@@ -1,0 +1,5 @@
+h1 "Game #{@game.id}"
+p
+  - if @game.players.any?
+    | Players:
+    = @game.players.map(&:name).join(', ')
