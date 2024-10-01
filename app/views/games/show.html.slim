@@ -3,5 +3,10 @@ p
   - if @game.players.any?
     | Players:
     = @game.players.map(&:name).join(', ')
+
+- @game.spaces.each do |space|
+    p.space-container
+      | Space:
+      = space.name
 = link_to 'Back to Games', games_path
 = link_to 'Create a New Game', new_game_path

@@ -6,6 +6,7 @@ RSpec.describe "games/show.html.slim", type: :view do
   let(:game) { Game.create(player_ids: [player_1.id, player_2.id]) }
 
   before(:each) do
+    game.initialize_spaces
     assign(:game, game)
   end
 
@@ -27,5 +28,11 @@ RSpec.describe "games/show.html.slim", type: :view do
     render
 
     expect(rendered).to have_link('Create a New Game', href: new_game_path)
+  end
+
+  it 'lists the game spaces' do
+    render
+
+    expect(rendered).to have_selector('p.space-container', count: 40)
   end
 end
