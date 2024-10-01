@@ -14,5 +14,12 @@ RSpec.describe "Games", type: :request do
       game_path = game_path(created_game)
       expect(response).to redirect_to(game_path)
     end
+
+    it 'initializes the game spaces' do
+      post '/games', params: { game: { player_ids: [player1.id, player2.id] } }
+
+      created_game = Game.last
+      expect(created_game.spaces.count).to eq(40)
+    end
   end
 end

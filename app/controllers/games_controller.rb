@@ -12,6 +12,7 @@ class GamesController < ApplicationController
     @game = Game.new
     @game.players = Player.find(params[:game][:player_ids].compact_blank)
     @game.save
+    @game.initialize_spaces
     redirect_to @game
   end
 
