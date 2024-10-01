@@ -8,6 +8,6 @@ RSpec.describe "games/new.html.slim", type: :view do
     render
 
     expect(rendered).to match /Create a New Game/
-    expect(rendered).to have_selector('select[name="game[players]"]'), count: 2
+    expect(rendered).to have_selector('select[name="game[players]"]')
   end
 end
