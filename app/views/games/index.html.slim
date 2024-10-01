@@ -1,4 +1,4 @@
-h1 All the players
+h1 All the Games!
 table
   thead
     tr
@@ -10,3 +10,4 @@ table
         td = link_to "Go to game", game_path(game)
         td
           = game.players.map(&:name).join(', ')
+= link_to 'Create a New Game', new_game_path

@@ -14,4 +14,10 @@ RSpec.describe "games/index.html.slim", type: :view do
     expect(rendered).to match /baz/
     expect(rendered).to have_selector('tr.game', count: 2)
   end
+
+  it 'shows a link to the new game page' do
+    render
+
+    expect(rendered).to have_link('Create a New Game', href: new_game_path)
+  end
 end

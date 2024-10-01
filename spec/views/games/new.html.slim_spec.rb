@@ -10,4 +10,10 @@ RSpec.describe "games/new.html.slim", type: :view do
     expect(rendered).to match /Create a New Game/
     expect(rendered).to have_selector('select[name="game[players]"]')
   end
+
+  it 'shows a link to the games index page' do
+    render
+
+    expect(rendered).to have_link('Back to Games', href: games_path)
+  end
 end

@@ -1,5 +1,7 @@
-h1 "Game #{@game.id}"
+h1 Game #{@game.id}
 p
   - if @game.players.any?
     | Players:
     = @game.players.map(&:name).join(', ')
+= link_to 'Back to Games', games_path
+= link_to 'Create a New Game', new_game_path
