@@ -1,12 +1,13 @@
 h1 Game #{@game.id}
+= link_to 'Back to Games', games_path
+= link_to 'Create a New Game', new_game_path
 p
   - if @game.players.any?
     | Players:
     = @game.players.map(&:name).join(', ')
 
-- @game.spaces.each do |space|
-    p.space-container
-      | Space:
-      = space.name
-= link_to 'Back to Games', games_path
-= link_to 'Create a New Game', new_game_path
+
+.game-board
+  - @game.spaces.each_with_index do |space, index|
+      .space-container id="space-#{space.position}" style="grid-area: space-#{space.position}"
+        = space.name

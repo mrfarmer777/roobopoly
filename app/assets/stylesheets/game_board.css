@@ -1,0 +1,23 @@
+.game-board {
+    display: grid;
+    grid-template-columns: [left-border] 80px [left-side-top] repeat(9,80px) [right-side-top] 80px [right-border];
+    grid-template-rows: [top-border] 80px [top-side-top] repeat(9,80px) [bottom-side-top] 80px [bottom-border];
+    grid-template-areas:
+        "space-1 space-2 space-3 space-4 space-5 space-6 space-7 space-8 space-9 space-10 space-11"
+        "space-40 center center center center center center center center center space-12"
+        "space-39 center center center center center center center center center space-13"
+        "space-38 center center center center center center center center center space-14"
+        "space-37 center center center center center center center center center space-15"
+        "space-36 center center center center center center center center center space-16"
+        "space-35 center center center center center center center center center space-17"
+        "space-34 center center center center center center center center center space-18"
+        "space-33 center center center center center center center center center space-19"
+        "space-32 center center center center center center center center center space-20"
+        "space-31 space-30 space-29 space-28 space-27 space-26 space-25 space-24 space-23 space-22 space-21";
+    grid-gap: 10px;
+    margin: 20px;
+}
+
+.space-container {
+    border: 1px solid black;
+}
