@@ -9,7 +9,7 @@ describe Dice, type: :model do
         results << dice.roll
       end
 
-      expect(results.min >= 1).to be_truthy
+      expect(results.min >= 2).to be_truthy
       expect(results.max <= 12).to be_truthy
     end
   end
