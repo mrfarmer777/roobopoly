@@ -9,5 +9,9 @@ p
 
 .game-board
   - @game.spaces.each_with_index do |space, index|
-      .space-container id="space-#{space.position}" style="grid-area: space-#{space.position}"
-        = space.name
+    .space-container id="space-#{space.position}" style="grid-area: space-#{space.position}"
+      = space.name
+      - pgs = @game.player_games.select{ |pg| pg.position == space.position }
+      - player_names = pgs&.map{ |pg| pg.player.name }
+      - if player_names&.any?
+        = player_names.join(', ')
