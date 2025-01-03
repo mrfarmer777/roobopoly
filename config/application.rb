@@ -24,5 +24,7 @@ module Roobopoly
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
     config.x.default_board = config_for(:default_board)
+
+    config.view_component.preview_paths << "#{Rails.root}/spec/components/previews"
   end
 end
