@@ -18,5 +18,6 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
+    @current_player_game = @game.player_games.first
   end
 end

@@ -7,6 +7,11 @@ p
     = @game.players.map(&:name).join(', ')
 
 
+.notice-container
+  = notice
+.controls
+  - if @current_player_game
+    = button_to 'Roll and Move', move_game_player_game_path(game_id: @game.id, id: @current_player_game.id), method: :post
 .game-board
   - @game.spaces.each_with_index do |space, index|
     .space-container id="space-#{space.position}" style="grid-area: space-#{space.position}"

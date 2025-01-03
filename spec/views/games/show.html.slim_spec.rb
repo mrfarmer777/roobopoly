@@ -33,6 +33,6 @@ RSpec.describe "games/show.html.slim", type: :view do
   it 'lists the game spaces' do
     render
 
-    expect(rendered).to have_selector('p.space-container', count: 40)
+    expect(rendered).to have_selector('div.space-container', count: 40)
   end
 end
