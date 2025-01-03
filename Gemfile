@@ -30,6 +30,9 @@ gem "jbuilder"
 gem 'slim'
 gem "slim-rails"
 
+# Use view components
+gem "view_component"
+
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
