@@ -42,7 +42,7 @@ describe Game, type: :model do
   describe '#increment_turn' do
     it 'increments the turn by 1' do
       game.increment_turn
-      expect(game.turn).to eq(2)
+      expect(game.reload.turn).to eq(2)
     end
   end
 

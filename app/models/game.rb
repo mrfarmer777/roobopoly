@@ -10,7 +10,7 @@ class Game < ApplicationRecord
   validate :minimum_players
 
   def increment_turn
-    self.turn += 1
+    update(turn: turn + 1)
   end
 
   def current_player_game
