@@ -13,6 +13,11 @@ class Game < ApplicationRecord
     self.turn += 1
   end
 
+  def current_player_game
+    player_game_index = (turn % player_games.size) - 1
+    player_games.sort[player_game_index]
+  end
+
   def initialize_spaces
     DEFAULT_BOARD_PROPERTIES.each_with_index do |space|
         self.spaces.create(position: space[:position], name: space[:name])

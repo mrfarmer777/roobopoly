@@ -61,4 +61,20 @@ describe Game, type: :model do
       expect(ordered_spaces.last.name).to eq("Boardwalk")
     end
   end
+
+  describe '#current_player_game' do
+    it 'returns the player game for the player whose turn it is' do
+      player1_game = game.player_games.find_by(player: player1)
+      player2_game = game.player_games.find_by(player: player2)
+      player1_game.update(position: 1)
+      player2_game.update(position: 2)
+      expect(game.current_player_game).to eq(player1_game)
+
+      game.increment_turn
+      expect(game.current_player_game).to eq(player2_game)
+
+      game.increment_turn
+      expect(game.current_player_game).to eq(player1_game)
+    end
+  end
 end
