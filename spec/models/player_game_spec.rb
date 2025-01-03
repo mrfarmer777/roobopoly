@@ -15,15 +15,15 @@ describe PlayerGame, type: :model do
     let(:game) { Game.create }
 
     it 'increments the position by the given amount' do
-      player_game = PlayerGame.new(position: 1, player:, game:)
+      player_game = PlayerGame.create(position: 1, player:, game:)
       player_game.increment_position(5)
-      expect(player_game.position).to eq(6)
+      expect(player_game.reload.position).to eq(6)
     end
 
     it 'loops back to 1 when the position exceeds 40' do
       player_game = PlayerGame.new(position: 39, player:, game:)
       player_game.increment_position(5)
-      expect(player_game.position).to eq(4)
+      expect(player_game.reload.position).to eq(4)
     end
   end
 end

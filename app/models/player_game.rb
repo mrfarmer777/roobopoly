@@ -7,7 +7,6 @@ class PlayerGame < ApplicationRecord
   MAX_SPACES = 40
 
   def increment_position(amount)
-    self.position += amount
-    self.position -= MAX_SPACES if self.position > MAX_SPACES
+    update(position: (self.position + amount) % MAX_SPACES)
   end
 end
