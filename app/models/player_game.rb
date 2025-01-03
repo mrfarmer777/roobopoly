@@ -4,9 +4,9 @@ class PlayerGame < ApplicationRecord
 
   validates :player_id, uniqueness: { scope: :game_id }
 
-  MAX_SPACES = 40
+  MAX_POSITION = Rails.configuration.x.default_board[:spaces].size
 
   def increment_position(amount)
-    update(position: (self.position + amount) % MAX_SPACES)
+    update(position: (self.position + amount) % MAX_POSITION)
   end
 end
