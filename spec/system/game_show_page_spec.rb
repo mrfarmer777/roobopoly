@@ -15,8 +15,8 @@ describe 'Game Show Page', type: :system do
 
     visit game_path(game)
 
-    expect(page).to have_selector('.space-container', text: 'foo', count: 1)
-    expect(page).to have_selector('.space-container', text: 'bar', count: 1)
+    expect(page).to have_selector('.space__container', text: 'foo', count: 1)
+    expect(page).to have_selector('.space__container', text: 'bar', count: 1)
   end
 
   it 'allows the players to roll and move' do
@@ -36,12 +36,12 @@ describe 'Game Show Page', type: :system do
     click_button 'Roll and Move'
 
     expect(page).to have_content('foo rolled a 5')
-    expect(page).to have_selector('.space-container#space-6', text: 'foo')
+    expect(page).to have_selector('.space__container#space-6', text: 'foo')
     expect(page).to have_content("It's your turn, bar")
 
     click_button 'Roll and Move'
     expect(page).to have_content('bar rolled a 6')
-    expect(page).to have_selector('.space-container#space-8', text: 'bar')
+    expect(page).to have_selector('.space__container#space-8', text: 'bar')
   end
 
 end

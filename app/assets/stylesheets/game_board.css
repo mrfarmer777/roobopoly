@@ -1,7 +1,10 @@
 .game-board {
+    --space-width: 70px;
+    --space-height: 105px;
     display: grid;
-    grid-template-columns: [left-border] 80px [left-side-top] repeat(9,80px) [right-side-top] 80px [right-border];
-    grid-template-rows: [top-border] 80px [top-side-top] repeat(9,80px) [bottom-side-top] 80px [bottom-border];
+    aspect-ratio: 1;
+    grid-template-rows: [top-border] var(--space-height) [top-side-top] repeat(9, var(--space-width)) [bottom-side-top] var(--space-height) [bottom-border];
+    grid-template-columns: [left-border] var(--space-height) [left-side-top] repeat(9, var(--space-width)) [right-side-top] var(--space-height) [right-border];
     grid-template-areas:
         "space-1 space-2 space-3 space-4 space-5 space-6 space-7 space-8 space-9 space-10 space-11"
         "space-40 center center center center center center center center center space-12"
@@ -15,9 +18,17 @@
         "space-32 center center center center center center center center center space-20"
         "space-31 space-30 space-29 space-28 space-27 space-26 space-25 space-24 space-23 space-22 space-21";
     grid-gap: 10px;
-    margin: 20px;
 }
 
-.space-container {
-    border: 1px solid black;
+.body-container {
+    display: flex;
+    justify-content: flex-start;
+    height: calc(100vh - 8px);
+
+    .controls-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px;
+    }
 }
