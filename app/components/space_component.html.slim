@@ -3,6 +3,7 @@
   .space__content
     = name
   .space__players
-    = player_names.join(', ')
+    - player_names.each do |player_name|
+      = render PlayerTokenComponent.new(name: player_name)
   .space__footer
 

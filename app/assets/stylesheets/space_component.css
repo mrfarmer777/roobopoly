@@ -79,6 +79,15 @@
     background-color: blue;
   }
 
+  .space__players {
+    display: flex;
+    flex-shrink: 1;
+    flex-direction: column;
+    gap: 4px;
+    justify-content: center;
+    align-items: center;
+  }
+
   .space__content {
     text-align: center;
     flex-grow: 1;
