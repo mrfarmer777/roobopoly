@@ -2,7 +2,6 @@ require 'rails_helper'
 require 'spec_helper'
 
 describe 'Game Show Page', type: :system do
-
   it 'shows the player tokens on the appropriate squares' do
     player1 = Player.create(name: 'foo')
     player2 = Player.create(name: 'bar')
@@ -43,5 +42,4 @@ describe 'Game Show Page', type: :system do
     expect(page).to have_content('bar rolled a 6')
     expect(page).to have_selector('.space__container#space-8', text: 'bar')
   end
-
 end
