@@ -19,7 +19,9 @@ class Game < ApplicationRecord
 
   def initialize_spaces
     DEFAULT_BOARD_PROPERTIES.each_with_index do |space|
-        self.spaces.create(position: space[:position], name: space[:name])
+        self.spaces.create(position: space[:position],
+                           name: space[:name],
+                           color: space[:color])
     end
   end
 
