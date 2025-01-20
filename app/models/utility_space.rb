@@ -1,0 +1,2 @@
+class UtilitySpace < Space
+end

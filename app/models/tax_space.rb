@@ -1,0 +1,2 @@
+class TaxSpace < Space
+end

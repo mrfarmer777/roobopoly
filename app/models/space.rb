@@ -1,6 +1,9 @@
 class Space < ApplicationRecord
   belongs_to :game
 
+  validates :name,
+            :position,
+            presence: true
   validates :position, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 40 }
   validate :color_is_hex, if: -> { color.present? }
 

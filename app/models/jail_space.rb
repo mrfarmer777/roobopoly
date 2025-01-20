@@ -1,0 +1,2 @@
+class JailSpace < Space
+end

@@ -2,205 +2,205 @@ shared:
   spaces:
     - name: "Go"
       position: 1
-      type: "special"
+      type: "ActionSpace"
     - name: "Mediterranean Avenue"
       color: "#8B4513"
       purchase_price: 60
       position: 2
       rent: 2
-      type: "property"
+      type: "PropertySpace"
     - name: "Community Chest"
       position: 3
-      type: "action"
+      type: "ActionSpace"
     - name: "Baltic Avenue"
       color: "#8B4513"
       purchase_price: 60
       position: 4
       rent: 4
-      type: "property"
+      type: "PropertySpace"
     - name: "Income Tax"
       position: 5
-      type: "tax"
+      type: "TaxSpace"
     - name: "Reading Railroad"
       color: "#000000"
       purchase_price: 200
       position: 6
       rent: 25
-      type: "property"
+      type: "PropertySpace"
     - name: "Chance"
       position: 7
-      type: "action"
+      type: "ActionSpace"
     - name: "Oriental Avenue"
       color: "#ADD8E6"
       purchase_price: 100
       position: 8
       rent: 6
-      type: "property"
+      type: "PropertySpace"
     - name: "Vermont Avenue"
       color: "#ADD8E6"
       purchase_price: 100
       position: 9
       rent: 6
-      type: "property"
+      type: "PropertySpace"
     - name: "Connecticut Avenue"
       color: "#ADD8E6"
       purchase_price: 120
       position: 10
       rent: 8
-      type: "property"
+      type: "PropertySpace"
     - name: "Jail"
       position: 11
-      type: "special"
+      type: "JailSpace"
     - name: "St. Charles Place"
       color: "#FF00FF"
       purchase_price: 140
       position: 12
       rent: 10
-      type: "property"
+      type: "PropertySpace"
     - name: "Electric Company"
       color: "#FFFFFF"
       purchase_price: 150
       position: 13
       rent: "4 times dice roll"
-      type: "property"
+      type: "UtilitySpace"
     - name: "States Avenue"
       color: "#FF00FF"
       purchase_price: 140
       position: 14
       rent: 10
-      type: "property"
+      type: "PropertySpace"
     - name: "Virginia Avenue"
       color: "#FF00FF"
       purchase_price: 160
       position: 15
       rent: 12
-      type: "property"
+      type: "PropertySpace"
     - name: "Pennsylvania Railroad"
       color: "#000000"
       purchase_price: 200
       position: 16
       rent: 25
-      type: "property"
+      type: "PropertySpace"
     - name: "St. James Place"
       color: "#FFA500"
       purchase_price: 180
       position: 17
       rent: 14
-      type: "property"
+      type: "PropertySpace"
     - name: "Community Chest"
       position: 18
-      type: "action"
+      type: "ActionSpace"
     - name: "Tennessee Avenue"
       color: "#FFA500"
       purchase_price: 180
       position: 19
       rent: 14
-      type: "property"
+      type: "PropertySpace"
     - name: "New York Avenue"
       color: "#FFA500"
       purchase_price: 200
       position: 20
       rent: 16
-      type: "property"
+      type: "PropertySpace"
     - name: "Free Parking"
       position: 21
-      type: "special"
+      type: "ActionSpace"
     - name: "Kentucky Avenue"
       color: "#FF0000"
       purchase_price: 220
       position: 22
       rent: 18
-      type: "property"
+      type: "PropertySpace"
     - name: "Chance"
       position: 23
-      type: "action"
+      type: "ActionSpace"
     - name: "Indiana Avenue"
       color: "#FF0000"
       purchase_price: 220
       position: 24
       rent: 18
-      type: "property"
+      type: "PropertySpace"
     - name: "Illinois Avenue"
       color: "#FF0000"
       purchase_price: 240
       position: 25
       rent: 20
-      type: "property"
+      type: "PropertySpace"
     - name: "B&O Railroad"
       color: "#000000"
       purchase_price: 200
       position: 26
       rent: 25
-      type: "property"
+      type: "PropertySpace"
     - name: "Atlantic Avenue"
       color: "#FFFF00"
       purchase_price: 260
       position: 27
       rent: 22
-      type: "property"
+      type: "PropertySpace"
     - name: "Ventnor Avenue"
       color: "#FFFF00"
       purchase_price: 260
       position: 28
       rent: 22
-      type: "property"
+      type: "PropertySpace"
     - name: "Water Works"
       color: "#FFFFFF"
       purchase_price: 150
       position: 29
       rent: "4 times dice roll"
-      type: "property"
+      type: "UtilitySpace"
     - name: "Marvin Gardens"
       color: "#FFFF00"
       purchase_price: 280
       position: 30
       rent: 24
-      type: "property"
+      type: "PropertySpace"
     - name: "Go to Jail"
       position: 31
-      type: "special"
+      type: "ActionSpace"
     - name: "Pacific Avenue"
       color: "#008000"
       purchase_price: 300
       position: 32
       rent: 26
-      type: "property"
+      type: "PropertySpace"
     - name: "North Carolina Avenue"
       color: "#008000"
       purchase_price: 300
       position: 33
       rent: 26
-      type: "property"
+      type: "PropertySpace"
     - name: "Community Chest"
       position: 34
-      type: "action"
+      type: "ActionSpace"
     - name: "Pennsylvania Avenue"
       color: "#008000"
       purchase_price: 320
       position: 35
       rent: 28
-      type: "property"
+      type: "PropertySpace"
     - name: "Short Line"
       color: "#000000"
       purchase_price: 200
       position: 36
       rent: 25
-      type: "property"
+      type: "PropertySpace"
     - name: "Chance"
       position: 37
-      type: "action"
+      type: "ActionSpace"
     - name: "Park Place"
       color: "#0000FF"
       purchase_price: 350
       position: 38
       rent: 35
-      type: "property"
+      type: "PropertySpace"
     - name: "Luxury Tax"
       position: 39
-      type: "tax"
+      type: "TaxSpace"
     - name: "Boardwalk"
       color: "#0000FF"
       purchase_price: 400
       position: 40
       rent: 50
-      type: "property"
+      type: "PropertySpace"

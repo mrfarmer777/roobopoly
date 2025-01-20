@@ -52,13 +52,16 @@ describe Game, type: :model do
       expect(game.spaces.count).to eq(40)
     end
 
-    it 'creates spaces with names and colors loaded from default board' do
+    it 'creates spaces with names, colors, and types loaded from default board' do
       game.initialize_spaces
       game.reload
       ordered_spaces = game.spaces.order(:position)
       expect(ordered_spaces.first.name).to eq("Go")
+      expect(ordered_spaces.first).to be_a(ActionSpace)
       expect(ordered_spaces.second.name).to eq("Mediterranean Avenue")
+      expect(ordered_spaces.second).to be_a(PropertySpace)
       expect(ordered_spaces.second.color).to eq("#8B4513")
+      expect(ordered_spaces.second.type).to eq("PropertySpace")
       expect(ordered_spaces.last.name).to eq("Boardwalk")
     end
   end
