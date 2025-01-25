@@ -16,4 +16,6 @@
   .game-board
     - @game.spaces.each_with_index do |space, index|
       - player_names = @game.player_games.select{ |pg| pg.position == space.position }.map{ |pg| pg.player.name }
-      = render SpaceComponent.new(name: space.name, position: space.position, player_names:, color: space.color)
+      - space_component = SpaceComponentFactory.create(space)
+      - space_component.player_names = player_names
+      = render space_component

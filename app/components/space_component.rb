@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
 class SpaceComponent < ViewComponent::Base
-  attr_reader :name, :position, :player_names, :color
+  attr_reader :name, :position
+  attr_accessor :player_names
 
   CORNERS = [1, 11, 21, 31]
   TOP_SIDE = (2..10)
   RIGHT_SIDE = (11..20)
   LEFT_SIDE = (32..40)
 
-  def initialize(name:, position:, player_names:, color: nil)
+  def initialize(name:, position:, player_names: nil)
     @name = name
     @position = position
-    @player_names = player_names
-    @color = color || "#ffffff"
+    @player_names = player_names || []
   end
 
   def rotation
@@ -29,6 +29,8 @@ class SpaceComponent < ViewComponent::Base
       "space--right"
     when *LEFT_SIDE
       "space--left"
+    else
+      "space--bottom"
     end
   end
 end
