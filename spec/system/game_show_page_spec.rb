@@ -42,4 +42,36 @@ describe 'Game Show Page', type: :system do
     expect(page).to have_content('bar rolled a 6')
     expect(page).to have_selector('.space__container#space-8', text: 'bar')
   end
+
+  it 'updates the players in all game windows', js: true do
+    player1 = Player.create(name: 'foo')
+    player2 = Player.create(name: 'bar')
+    game = Game.create(players: [player1, player2])
+    game.initialize_spaces
+    player1_game = game.player_games.find_by(player: player1)
+    player2_game = game.player_games.find_by(player: player2)
+    player1_game.update(position: 1)
+    player2_game.update(position: 2)
+    mock_dice_one = instance_double(Dice, roll: 5)
+    mock_dice_two = instance_double(Dice, roll: 6)
+    allow(Dice).to receive(:new).and_return(mock_dice_one, mock_dice_two)
+
+    visit game_path(game)
+    click_button 'Roll and Move'
+
+    new_window = open_new_window
+    within_window new_window do
+      visit game_path(game)
+      expect(page).to have_selector('.space__container#space-6', text: 'foo')
+      expect(page).to have_content("It's your turn, bar")
+    end
+
+    click_button 'Roll and Move'
+
+    within_window new_window do
+      expect(page).to have_selector('.space__container#space-8', text: 'bar')
+      expect(page).to have_content("It's your turn, foo")
+    end
+
+  end
 end

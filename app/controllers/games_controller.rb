@@ -19,5 +19,6 @@ class GamesController < ApplicationController
   def show
     @game = Game.find(params[:id])
     @current_player_game = @game&.current_player_game
+    render :show, locals: { game: @game, current_player_game: @current_player_game }
   end
 end

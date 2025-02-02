@@ -31,4 +31,6 @@ class Game < ApplicationRecord
   def minimum_players
     errors.add(:players, "must have at least 2 players") if players.size < 2
   end
+
+
 end

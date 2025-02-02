@@ -8,6 +8,7 @@ class PlayerGamesController < ApplicationController
     @player_game.increment_position(roll)
     @game.increment_turn
     flash[:notice] = "#{@player.name} rolled a #{roll}"
+
     redirect_to game_path(@player_game.game)
   end
 end
