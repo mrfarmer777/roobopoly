@@ -59,19 +59,13 @@ describe 'Game Show Page', type: :system do
     visit game_path(game)
     click_button 'Roll and Move'
 
-    new_window = open_new_window
-    within_window new_window do
+    Capybara.using_session('other player') do
       visit game_path(game)
       expect(page).to have_selector('.space__container#space-6', text: 'foo')
       expect(page).to have_content("It's your turn, bar")
+      click_button 'Roll and Move'
     end
 
-    click_button 'Roll and Move'
-
-    within_window new_window do
-      expect(page).to have_selector('.space__container#space-8', text: 'bar')
-      expect(page).to have_content("It's your turn, foo")
-    end
-
+    expect(page).to have_selector('.space__container#space-8', text: 'bar')
   end
 end

@@ -13,6 +13,8 @@ class Game < ApplicationRecord
   end
 
   def current_player_game
+    return nil if player_games.empty?
+
     player_game_index = (turn % player_games.size) - 1
     player_games.sort[player_game_index]
   end
