@@ -1,4 +1,6 @@
 class PropertySpace < Space
+  has_one :property, dependent: :destroy
+
   validate :color_is_hex, if: -> { color.present? }
 
   private
