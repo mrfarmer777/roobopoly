@@ -64,6 +64,16 @@ describe Game, type: :model do
       expect(ordered_spaces.second.type).to eq("PropertySpace")
       expect(ordered_spaces.last.name).to eq("Boardwalk")
     end
+
+    it 'creates a property for each property space' do
+      game.initialize_spaces
+      game.reload
+      property_spaces = game.spaces.where(type: "PropertySpace")
+      expect(property_spaces.count).to eq(26)
+      expect(property_spaces.first.property).to be_a(Property)
+      expect(property_spaces.first.property.price).to eq(60)
+      expect(property_spaces.last.property.price).to eq(400)
+    end
   end
 
   describe '#current_player_game' do

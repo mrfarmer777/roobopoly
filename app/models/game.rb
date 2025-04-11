@@ -21,10 +21,15 @@ class Game < ApplicationRecord
 
   def initialize_spaces
     DEFAULT_BOARD_PROPERTIES.each_with_index do |space|
-        self.spaces.create(position: space[:position],
-                           type: space[:type],
-                           name: space[:name],
-                           color: space[:color])
+      space_record = Space.create(position: space[:position],
+                                  type: space[:type],
+                                  name: space[:name],
+                                  color: space[:color])
+      self.spaces << space_record
+      if space_record.valid? && space_record.is_a?(PropertySpace)
+        space_record.create_property!(price: space[:purchase_price],
+                                      base_rent: space[:rent])
+      end
     end
   end
 
