@@ -35,4 +35,12 @@ RSpec.describe "games/show.html.slim", type: :view do
 
     expect(rendered).to have_selector('div.space__container', count: 40)
   end
+
+  it 'lists the purchase price of each space' do
+    # render
+
+    game.spaces.where(type: 'PropertySpace').each do |property_space|
+      expect(rendered).to have_content(property_space.property.price)
+    end
+  end
 end

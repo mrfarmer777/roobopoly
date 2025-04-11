@@ -4,6 +4,7 @@ describe SpaceComponentFactory, type: :model do
   describe 'create' do
     it 'creates a PropertySpaceComponent when space type is PropertySpace' do
       space = PropertySpace.new(position: 1, name: "Foo", type: "PropertySpace", color: "blue")
+      space.property = Property.new(price: 100, base_rent: 10)
       space_component = SpaceComponentFactory.create(space)
       expect(space_component).to be_a(SpaceComponents::PropertySpaceComponent)
     end

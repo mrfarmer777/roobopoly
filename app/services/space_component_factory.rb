@@ -3,6 +3,7 @@ class SpaceComponentFactory
     case space.type
     when 'PropertySpace'
       SpaceComponents::PropertySpaceComponent.new(name: space.name,
+                                                  price: space.property.price,
                                                   position: space.position,
                                                   color: space.color)
     when 'ActionSpace'
