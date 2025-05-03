@@ -1,5 +1,5 @@
 h1 Create a New Game
 = form_for :game, url: games_path do |f|
-  = f.collection_select :player_ids, Player.all, :id, :name, prompt: 'Select players', multiple: true
+  = f.collection_select :user_ids, User.all, :id, :name, prompt: 'Select users', multiple: true
   = f.submit 'Create Game'
 = link_to 'Back to Games', games_path

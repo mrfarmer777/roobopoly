@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 module SpaceComponents
   class TaxSpaceComponent < SpaceComponent
-    attr_reader :name, :position, :player_names, :color
+    attr_reader :name, :position, :user_names, :color
 
-    def initialize(name:, position:, player_names: nil)
-      super(name:, position:, player_names:)
+    def initialize(name:, position:, user_names: nil)
+      super(name:, position:, user_names:)
     end
 
   end

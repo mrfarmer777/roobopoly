@@ -10,7 +10,7 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.new
-    @game.players = Player.find(params[:game][:player_ids].compact_blank)
+    @game.users = User.find(params[:game][:user_ids].compact_blank)
     @game.save
     @game.initialize_spaces
     redirect_to @game
@@ -18,7 +18,7 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
-    @current_player_game = @game&.current_player_game
-    render :show, locals: { game: @game, current_player_game: @current_player_game }
+    @current_user_game = @game&.current_user_game
+    render :show, locals: { game: @game, current_user_game: @current_user_game }
   end
 end

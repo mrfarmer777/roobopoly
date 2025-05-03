@@ -2,10 +2,10 @@ require 'rails_helper'
 
 RSpec.describe "games/index.html.slim", type: :view do
   it 'lists all of the games' do
-    player1 = Player.create(name: 'foo')
-    player2 = Player.create(name: 'bar')
-    player3 = Player.create(name: 'baz')
-    assign(:games, [Game.create(players: [player1, player2]), Game.create(players: [player1,player3])])
+    user1 = User.create(name: 'foo')
+    user2 = User.create(name: 'bar')
+    user3 = User.create(name: 'baz')
+    assign(:games, [Game.create(users: [user1, user2]), Game.create(users: [user1,user3])])
 
     render
 

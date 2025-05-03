@@ -2,15 +2,15 @@ require 'rails_helper'
 require 'spec_helper'
 
 describe 'Game Show Page', type: :system do
-  it 'shows the player tokens on the appropriate squares' do
-    player1 = Player.create(name: 'foo')
-    player2 = Player.create(name: 'bar')
-    game = Game.create(players: [player1, player2])
+  it 'shows the user tokens on the appropriate squares' do
+    user1 = User.create(name: 'foo')
+    user2 = User.create(name: 'bar')
+    game = Game.create(users: [user1, user2])
     game.initialize_spaces
-    player1_game = game.player_games.find_by(player: player1)
-    player2_game = game.player_games.find_by(player: player2)
-    player1_game.update(position: 1)
-    player2_game.update(position: 2)
+    user1_game = game.user_games.find_by(user: user1)
+    user2_game = game.user_games.find_by(user: user2)
+    user1_game.update(position: 1)
+    user2_game.update(position: 2)
 
     visit game_path(game)
 
@@ -18,15 +18,15 @@ describe 'Game Show Page', type: :system do
     expect(page).to have_selector('.space__container', text: 'bar', count: 1)
   end
 
-  it 'allows the players to roll and move' do
-    player1 = Player.create(name: 'foo')
-    player2 = Player.create(name: 'bar')
-    game = Game.create(players: [player1, player2])
+  it 'allows the users to roll and move' do
+    user1 = User.create(name: 'foo')
+    user2 = User.create(name: 'bar')
+    game = Game.create(users: [user1, user2])
     game.initialize_spaces
-    player1_game = game.player_games.find_by(player: player1)
-    player2_game = game.player_games.find_by(player: player2)
-    player1_game.update(position: 1)
-    player2_game.update(position: 2)
+    user1_game = game.user_games.find_by(user: user1)
+    user2_game = game.user_games.find_by(user: user2)
+    user1_game.update(position: 1)
+    user2_game.update(position: 2)
     mock_dice_one = instance_double(Dice, roll: 5)
     mock_dice_two = instance_double(Dice, roll: 6)
     allow(Dice).to receive(:new).and_return(mock_dice_one, mock_dice_two)
@@ -43,15 +43,15 @@ describe 'Game Show Page', type: :system do
     expect(page).to have_selector('.space__container#space-8', text: 'bar')
   end
 
-  it 'updates the players in all game windows', js: true do
-    player1 = Player.create(name: 'foo')
-    player2 = Player.create(name: 'bar')
-    game = Game.create(players: [player1, player2])
+  it 'updates the users in all game windows', js: true do
+    user1 = User.create(name: 'foo')
+    user2 = User.create(name: 'bar')
+    game = Game.create(users: [user1, user2])
     game.initialize_spaces
-    player1_game = game.player_games.find_by(player: player1)
-    player2_game = game.player_games.find_by(player: player2)
-    player1_game.update(position: 1)
-    player2_game.update(position: 2)
+    user1_game = game.user_games.find_by(user: user1)
+    user2_game = game.user_games.find_by(user: user2)
+    user1_game.update(position: 1)
+    user2_game.update(position: 2)
     mock_dice_one = instance_double(Dice, roll: 5)
     mock_dice_two = instance_double(Dice, roll: 6)
     allow(Dice).to receive(:new).and_return(mock_dice_one, mock_dice_two)
@@ -59,7 +59,7 @@ describe 'Game Show Page', type: :system do
     visit game_path(game)
     click_button 'Roll and Move'
 
-    Capybara.using_session('other player') do
+    Capybara.using_session('other user') do
       visit game_path(game)
       expect(page).to have_selector('.space__container#space-6', text: 'foo')
       expect(page).to have_content("It's your turn, bar")

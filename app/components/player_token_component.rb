@@ -9,7 +9,7 @@ class PlayerTokenComponent < ViewComponent::Base
   end
 
   def call
-    content_tag 'sl-badge', pill: true, class: "player-token" do
+    content_tag 'sl-badge', pill: true, class: "user-token" do
       name
     end
   end

@@ -1,8 +1,8 @@
-class PlayerGame < ApplicationRecord
-  belongs_to :player
+class UserGame < ApplicationRecord
+  belongs_to :user
   belongs_to :game
 
-  validates :player_id, uniqueness: { scope: :game_id }
+  validates :user_id, uniqueness: { scope: :game_id }
 
   after_update :broadcast_game_update
 
@@ -16,6 +16,6 @@ class PlayerGame < ApplicationRecord
     broadcast_replace_to(game,
                          target: "game_#{game_id}",
                          template: 'games/show',
-                         locals: { game: game, current_player_game: game.current_player_game })
+                         locals: { game: game, current_user_game: game.current_user_game })
   end
 end

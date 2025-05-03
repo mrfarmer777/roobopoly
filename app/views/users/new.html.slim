@@ -1,0 +1,5 @@
+h1 Create a User
+= form_for :user, url: users_path do |f|
+  = f.label :name
+  = f.text_field :name, placeholder: 'Enter user name'
+  = f.submit 'Create User'

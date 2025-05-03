@@ -22,23 +22,6 @@ ActiveRecord::Schema[7.1].define(version: 2025_02_16_230814) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "player_games", force: :cascade do |t|
-    t.integer "player_id"
-    t.integer "game_id"
-    t.string "result"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "position", default: 1
-  end
-
-  create_table "players", force: :cascade do |t|
-    t.string "name", null: false
-    t.integer "wins", default: 0
-    t.integer "losses", default: 0
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "properties", force: :cascade do |t|
     t.integer "property_space_id", null: false
     t.integer "owner_id"
@@ -56,6 +39,23 @@ ActiveRecord::Schema[7.1].define(version: 2025_02_16_230814) do
     t.datetime "updated_at", null: false
     t.string "color"
     t.string "type"
+  end
+
+  create_table "user_games", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "game_id"
+    t.string "result"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "position", default: 1
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "wins", default: 0
+    t.integer "losses", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

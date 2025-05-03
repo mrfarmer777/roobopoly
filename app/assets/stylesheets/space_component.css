@@ -17,7 +17,7 @@
       flex-shrink: 0;
       height: 100%
     }
-    .space__content, .space__players, .space__footer {
+    .space__content, .space__users, .space__footer {
       transform: rotate(-90deg);
     }
   }
@@ -29,7 +29,7 @@
       width: 20px;
       height: 100%
     }
-    .space__content, .space__players, .space__footer {
+    .space__content, .space__users, .space__footer {
       transform: rotate(90deg);
     }
   }
@@ -79,7 +79,7 @@
     background-color: blue;
   }
 
-  .space__players {
+  .space__users {
     display: flex;
     flex-shrink: 1;
     flex-direction: column;

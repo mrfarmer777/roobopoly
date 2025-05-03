@@ -1,19 +1,19 @@
 require 'rails_helper'
 
 describe Game, type: :model do
-  let(:player1) { Player.create(name: "Player 1") }
-  let(:player2) { Player.create(name: "Player 2") }
+  let(:user1) { User.create(name: "User 1") }
+  let(:user2) { User.create(name: "User 2") }
   let(:game) do
-    Game.create(players: [player1, player2])
+    Game.create(users: [user1, user2])
   end
   describe 'associations' do
-    it { should have_many(:player_games) }
-    it { should have_many(:players).through(:player_games) }
+    it { should have_many(:user_games) }
+    it { should have_many(:users).through(:user_games) }
     it { should have_many(:spaces) }
 
     it 'destroys all related spaces when destroyed' do
 
-      other_game = Game.create(players: [player1, player2])
+      other_game = Game.create(users: [user1, user2])
       game.spaces.create(position: 1, name: "Go")
       game.spaces.create(position: 2, name: "Free Parking")
       game.spaces.create(position: 3, name: "Boardwalk")
@@ -24,13 +24,13 @@ describe Game, type: :model do
   end
 
   describe 'validations' do
-    it { should validate_presence_of(:players) }
+    it { should validate_presence_of(:users) }
 
-    it 'validates that at least two players are present' do
+    it 'validates that at least two users are present' do
       game = Game.new
-      game.players.build(name: "Player 1")
+      game.users.build(name: "User 1")
       expect(game.valid?).to be false
-      game.players.build(name: "Player 2")
+      game.users.build(name: "User 2")
       expect(game.valid?).to be true
     end
   end
@@ -76,19 +76,19 @@ describe Game, type: :model do
     end
   end
 
-  describe '#current_player_game' do
-    it 'returns the player game for the player whose turn it is' do
-      player1_game = game.player_games.find_by(player: player1)
-      player2_game = game.player_games.find_by(player: player2)
-      player1_game.update(position: 1)
-      player2_game.update(position: 2)
-      expect(game.current_player_game).to eq(player1_game)
+  describe '#current_user_game' do
+    it 'returns the user game for the user whose turn it is' do
+      user1_game = game.user_games.find_by(user: user1)
+      user2_game = game.user_games.find_by(user: user2)
+      user1_game.update(position: 1)
+      user2_game.update(position: 2)
+      expect(game.current_user_game).to eq(user1_game)
 
       game.increment_turn
-      expect(game.current_player_game).to eq(player2_game)
+      expect(game.current_user_game).to eq(user2_game)
 
       game.increment_turn
-      expect(game.current_player_game).to eq(player1_game)
+      expect(game.current_user_game).to eq(user1_game)
     end
   end
 end

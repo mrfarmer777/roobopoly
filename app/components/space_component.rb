@@ -2,17 +2,17 @@
 
 class SpaceComponent < ViewComponent::Base
   attr_reader :name, :position
-  attr_accessor :player_names
+  attr_accessor :user_names
 
   CORNERS = [1, 11, 21, 31]
   TOP_SIDE = (2..10)
   RIGHT_SIDE = (11..20)
   LEFT_SIDE = (32..40)
 
-  def initialize(name:, position:, player_names: nil)
+  def initialize(name:, position:, user_names: nil)
     @name = name
     @position = position
-    @player_names = player_names || []
+    @user_names = user_names || []
   end
 
   def rotation

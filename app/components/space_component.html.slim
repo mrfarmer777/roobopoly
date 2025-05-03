@@ -2,8 +2,8 @@
   .space__header
   .space__content
     = name
-  .space__players
-    - player_names.each do |player_name|
-      = render PlayerTokenComponent.new(name: player_name)
+  .space__users
+    - user_names.each do |user_name|
+      = render PlayerTokenComponent.new(name: user_name)
   .space__footer
 

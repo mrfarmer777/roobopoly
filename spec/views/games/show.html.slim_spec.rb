@@ -1,17 +1,17 @@
 require 'rails_helper'
 
 RSpec.describe "games/show.html.slim", type: :view do
-  let(:player_1) { Player.create(name: 'foo') }
-  let(:player_2) { Player.create(name: 'bar') }
-  let(:game) { Game.create(player_ids: [player_1.id, player_2.id]) }
+  let(:user_1) { User.create(name: 'foo') }
+  let(:user_2) { User.create(name: 'bar') }
+  let(:game) { Game.create(user_ids: [user_1.id, user_2.id]) }
 
   before(:each) do
     game.initialize_spaces
     assign(:game, game)
-    render locals: { current_player_game: game.current_player_game, game: }
+    render locals: { current_user_game: game.current_user_game, game: }
   end
 
-  it 'shows the game and player names' do
+  it 'shows the game and user names' do
 
     expect(rendered).to match /Game #{game.id}/
     expect(rendered).to match /foo/

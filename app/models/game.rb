@@ -1,22 +1,22 @@
 class Game < ApplicationRecord
-  has_many :player_games
-  has_many :players, through: :player_games
+  has_many :user_games
+  has_many :users, through: :user_games
   has_many :spaces, dependent: :destroy
 
   DEFAULT_BOARD_PROPERTIES = Rails.configuration.x.default_board[:spaces]
 
-  validates :players, presence: true
-  validate :minimum_players
+  validates :users, presence: true
+  validate :minimum_users
 
   def increment_turn
     update(turn: turn + 1)
   end
 
-  def current_player_game
-    return nil if player_games.empty?
+  def current_user_game
+    return nil if user_games.empty?
 
-    player_game_index = (turn % player_games.size) - 1
-    player_games.sort[player_game_index]
+    user_game_index = (turn % user_games.size) - 1
+    user_games.sort[user_game_index]
   end
 
   def initialize_spaces
@@ -35,8 +35,8 @@ class Game < ApplicationRecord
 
   private
 
-  def minimum_players
-    errors.add(:players, "must have at least 2 players") if players.size < 2
+  def minimum_users
+    errors.add(:users, "must have at least 2 users") if users.size < 2
   end
 
 

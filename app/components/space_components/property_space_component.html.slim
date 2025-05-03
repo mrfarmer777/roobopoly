@@ -2,9 +2,9 @@
   .space__header style="background-color: #{color}"
   .space__content
     = name
-  .space__players
-    - player_names.each do |player_name|
-      = render PlayerTokenComponent.new(name: player_name)
+  .space__users
+    - user_names.each do |user_name|
+      = render PlayerTokenComponent.new(name: user_name)
   .space__footer
     = number_to_currency(price, unit: '$', precision: 0) if price
 
