@@ -1,6 +1,6 @@
 class Game < ApplicationRecord
-  has_many :user_games
-  has_many :users, through: :user_games
+  has_many :players
+  has_many :users, through: :players
   has_many :spaces, dependent: :destroy
 
   DEFAULT_BOARD_PROPERTIES = Rails.configuration.x.default_board[:spaces]
@@ -12,11 +12,11 @@ class Game < ApplicationRecord
     update(turn: turn + 1)
   end
 
-  def current_user_game
-    return nil if user_games.empty?
+  def current_player
+    return nil if players.empty?
 
-    user_game_index = (turn % user_games.size) - 1
-    user_games.sort[user_game_index]
+    player_index = (turn % players.size) - 1
+    players.sort[player_index]
   end
 
   def initialize_spaces

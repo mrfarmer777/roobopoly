@@ -8,7 +8,7 @@ RSpec.describe User, type: :model do
   end
 
   describe 'associations' do
-    it { should have_many(:user_games) }
+    it { should have_many(:players) }
     it { should have_many(:games) }
   end
 end

@@ -1,4 +1,4 @@
-class UserGame < ApplicationRecord
+class Player < ApplicationRecord
   belongs_to :user
   belongs_to :game
 
@@ -16,6 +16,6 @@ class UserGame < ApplicationRecord
     broadcast_replace_to(game,
                          target: "game_#{game_id}",
                          template: 'games/show',
-                         locals: { game: game, current_user_game: game.current_user_game })
+                         locals: { game: game, current_player: game.current_player })
   end
 end

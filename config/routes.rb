@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :users
   resources :games do
-    resources :user_games do
+    resources :players do
       member do
         post :move
       end

@@ -7,8 +7,8 @@ describe Game, type: :model do
     Game.create(users: [user1, user2])
   end
   describe 'associations' do
-    it { should have_many(:user_games) }
-    it { should have_many(:users).through(:user_games) }
+    it { should have_many(:players) }
+    it { should have_many(:users).through(:players) }
     it { should have_many(:spaces) }
 
     it 'destroys all related spaces when destroyed' do
@@ -76,19 +76,19 @@ describe Game, type: :model do
     end
   end
 
-  describe '#current_user_game' do
+  describe '#current_player' do
     it 'returns the user game for the user whose turn it is' do
-      user1_game = game.user_games.find_by(user: user1)
-      user2_game = game.user_games.find_by(user: user2)
+      user1_game = game.players.find_by(user: user1)
+      user2_game = game.players.find_by(user: user2)
       user1_game.update(position: 1)
       user2_game.update(position: 2)
-      expect(game.current_user_game).to eq(user1_game)
+      expect(game.current_player).to eq(user1_game)
 
       game.increment_turn
-      expect(game.current_user_game).to eq(user2_game)
+      expect(game.current_player).to eq(user2_game)
 
       game.increment_turn
-      expect(game.current_user_game).to eq(user1_game)
+      expect(game.current_player).to eq(user1_game)
     end
   end
 end

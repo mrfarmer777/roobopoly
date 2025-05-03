@@ -8,7 +8,7 @@ RSpec.describe "games/show.html.slim", type: :view do
   before(:each) do
     game.initialize_spaces
     assign(:game, game)
-    render locals: { current_user_game: game.current_user_game, game: }
+    render locals: { current_player: game.current_player, game: }
   end
 
   it 'shows the game and user names' do

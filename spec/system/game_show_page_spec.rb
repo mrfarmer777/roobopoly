@@ -7,8 +7,8 @@ describe 'Game Show Page', type: :system do
     user2 = User.create(name: 'bar')
     game = Game.create(users: [user1, user2])
     game.initialize_spaces
-    user1_game = game.user_games.find_by(user: user1)
-    user2_game = game.user_games.find_by(user: user2)
+    user1_game = game.players.find_by(user: user1)
+    user2_game = game.players.find_by(user: user2)
     user1_game.update(position: 1)
     user2_game.update(position: 2)
 
@@ -23,8 +23,8 @@ describe 'Game Show Page', type: :system do
     user2 = User.create(name: 'bar')
     game = Game.create(users: [user1, user2])
     game.initialize_spaces
-    user1_game = game.user_games.find_by(user: user1)
-    user2_game = game.user_games.find_by(user: user2)
+    user1_game = game.players.find_by(user: user1)
+    user2_game = game.players.find_by(user: user2)
     user1_game.update(position: 1)
     user2_game.update(position: 2)
     mock_dice_one = instance_double(Dice, roll: 5)
@@ -48,8 +48,8 @@ describe 'Game Show Page', type: :system do
     user2 = User.create(name: 'bar')
     game = Game.create(users: [user1, user2])
     game.initialize_spaces
-    user1_game = game.user_games.find_by(user: user1)
-    user2_game = game.user_games.find_by(user: user2)
+    user1_game = game.players.find_by(user: user1)
+    user2_game = game.players.find_by(user: user2)
     user1_game.update(position: 1)
     user2_game.update(position: 2)
     mock_dice_one = instance_double(Dice, roll: 5)
