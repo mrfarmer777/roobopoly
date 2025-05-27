@@ -51,9 +51,15 @@ RSpec.configure do |config|
     driven_by :rack_test
   end
 
-  config.before(:each, type: :system, js: true) do
-    driven_by :selenium_chrome_headless
+  Capybara.register_driver :headless_chrome do |app|
+    options = Selenium::WebDriver::Chrome::Options.new
+    options.add_argument('--headless') # Enables headless mode
+    options.add_argument('--disable-gpu') # Required for some systems
+    # Other optional arguments (e.g., window size, disable extensions)
+    Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
   end
+
+  Capybara.javascript_driver = :headless_chrome
 
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.
