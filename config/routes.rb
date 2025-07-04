@@ -6,6 +6,9 @@ Rails.application.routes.draw do
         post :move
       end
     end
+
+    resources :properties, only: [:edit, :update] do
+    end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

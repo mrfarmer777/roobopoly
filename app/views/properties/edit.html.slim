@@ -1,0 +1,8 @@
+h2 = "This property is available. Would you like to buy it #{player.user.name}?"
+span = space.name
+span = number_to_currency(property.price)
+= form_for(property,
+        url: game_property_path(game_id: game.id, id: property.id),
+        data: { turbo_frame: '_top', turbo_visit_control: 'reload'})
+  = hidden_field(:property, :owner_id, value: player.id)
+  = button_to('Purchase Property', type: 'submit')

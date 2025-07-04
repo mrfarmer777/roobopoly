@@ -91,4 +91,30 @@ describe Game, type: :model do
       expect(game.current_player).to eq(user1_game)
     end
   end
+
+  describe '#player_can_purchase_current_space?' do
+    let(:player_1) { game.players.find_by(user: user1) }
+    let(:player_2) { game.players.find_by(user: user2) }
+    let(:property_space) { game.spaces.find_by(name: "Mediterranean Avenue") }
+
+    before do
+      game.initialize_spaces
+      player_1.update(position: 2)
+      player_2.update(position: 3)
+    end
+
+    it 'returns true if the player is on a property space and has enough money' do
+      expect(game.player_can_purchase_current_space?(player_1)).to be true
+    end
+
+    it 'returns false if the player is not on a property space' do
+      player_1.update(position: 3)
+      expect(game.player_can_purchase_current_space?(player_1)).to be false
+    end
+
+    it 'returns false if the player does not have enough money' do
+      player_1.update(money: 0)
+      expect(game.player_can_purchase_current_space?(player_1)).to be false
+    end
+  end
 end

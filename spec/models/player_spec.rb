@@ -6,6 +6,16 @@ describe Player, type: :model do
   let(:game) { Game.create(users: [user_one, user_two]) }
   let(:subject) { described_class.new(user: user_one, game:) }
 
+  describe 'initialization' do
+    it 'creates a player with default attributes' do
+      expect(subject.user).to eq(user_one)
+      expect(subject.game).to eq(game)
+      expect(subject.position).to eq(1)
+      expect(subject.money).to eq(1500)
+      expect(subject.result).to be_nil
+    end
+  end
+
   describe 'associations' do
     it { should belong_to(:user) }
     it { should belong_to(:game) }

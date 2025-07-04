@@ -8,15 +8,16 @@
       - if game.users.any?
         | Players:
         = game.users.map(&:name).join(', ')
-    .notice-container
+    .notice-container#notice-container
       = notice
     .controls
       = "It's your turn, #{current_player.user.name}!" if current_player
       - if current_player
-        = button_to 'Roll and Move', move_game_player_path(game_id: game.id, id: current_player.id), method: :post
+        = button_to 'Roll and Move', move_game_player_path(game_id: game.id, id: current_player.id), method: :post, data: { turbo_frame: 'modal' }
   .game-board
     - game.spaces.each_with_index do |space, index|
       - user_names = game.players.select{ |pg| pg.position == space.position }.map{ |pg| pg.user.name }
       - space_component = SpaceComponentFactory.create(space)
       - space_component.user_names = user_names
       = render space_component
+

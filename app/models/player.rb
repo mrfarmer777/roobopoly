@@ -1,6 +1,7 @@
 class Player < ApplicationRecord
   belongs_to :user
   belongs_to :game
+  has_many :properties, foreign_key: :owner_id
 
   validates :user_id, uniqueness: { scope: :game_id }
 

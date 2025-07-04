@@ -33,6 +33,16 @@ class Game < ApplicationRecord
     end
   end
 
+  def player_can_purchase_current_space?(player)
+    current_space = spaces.find_by(position: player.position)
+    return false unless current_space.is_a?(PropertySpace)
+
+    property = current_space.property
+    return false if property.nil? || property.owner.present?
+
+    player.money >= property.price
+  end
+
   private
 
   def minimum_users
